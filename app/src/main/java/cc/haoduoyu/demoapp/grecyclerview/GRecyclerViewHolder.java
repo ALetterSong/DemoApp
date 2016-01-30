@@ -1,4 +1,4 @@
-package cc.haoduoyu.demoapp.widget;
+package cc.haoduoyu.demoapp.grecyclerview;
 
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;

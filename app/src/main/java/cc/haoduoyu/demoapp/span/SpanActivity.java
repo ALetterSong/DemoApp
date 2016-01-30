@@ -9,7 +9,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import cc.haoduoyu.demoapp.R;
-import cc.haoduoyu.demoapp.widget.GRecyclerView;
+import cc.haoduoyu.demoapp.grecyclerview.GRecyclerView;
 
 /**
  * Created by XP on 2016/1/27.

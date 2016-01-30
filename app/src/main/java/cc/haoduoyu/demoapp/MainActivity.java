@@ -1,4 +1,4 @@
-package cc.haoduoyu.demoapp.main;
+package cc.haoduoyu.demoapp;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,19 +11,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import cc.haoduoyu.demoapp.R;
 import cc.haoduoyu.demoapp.base.Demo;
+import cc.haoduoyu.demoapp.canvas.CanvasActivity;
 import cc.haoduoyu.demoapp.device.DeviceActivity;
 import cc.haoduoyu.demoapp.dropdownlistview.DropDownListViewActivity;
-import cc.haoduoyu.demoapp.rxjava.RxJavaActivity;
 import cc.haoduoyu.demoapp.span.SpanActivity;
 import cc.haoduoyu.demoapp.utils.ToastUtils;
+import cc.haoduoyu.demoapp.webview.WebViewActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
 //        mDemos.add(new Demo("RxJavaActivity", new Intent(this, RxJavaActivity.class)));
         mDemos.add(new Demo("SpanActivity", new Intent(this, SpanActivity.class)));
         mDemos.add(new Demo("DeviceActivity", new Intent(this, DeviceActivity.class)));
+        mDemos.add(new Demo("CanvasActivity", new Intent(this, CanvasActivity.class)));
+        mDemos.add(new Demo("WebViewActivity", new Intent(this, WebViewActivity.class)));
+
 
 
     }
@@ -65,8 +67,7 @@ public class MainActivity extends AppCompatActivity {
             public void onTouch(View v, TextView titleView, TextView enterView, Demo demo) {
                 if (demo == null) return;
                 if (v == titleView) {
-//                    ToastUtils.showToast(demo.title);
-                    Toast.makeText(MainActivity.this, demo.title, Toast.LENGTH_SHORT).show();
+                    ToastUtils.showToast(MainActivity.this, demo.title);
                 } else if (v == enterView) {
                     startActivity(demo.intent);
                 }

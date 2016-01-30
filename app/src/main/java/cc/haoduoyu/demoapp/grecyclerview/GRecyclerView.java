@@ -1,4 +1,4 @@
-package cc.haoduoyu.demoapp.widget;
+package cc.haoduoyu.demoapp.grecyclerview;
 
 import android.content.Context;
 import android.support.v7.widget.DefaultItemAnimator;

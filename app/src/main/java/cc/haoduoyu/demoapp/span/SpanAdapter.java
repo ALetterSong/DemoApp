@@ -19,8 +19,8 @@ import android.text.style.UnderlineSpan;
 import android.widget.TextView;
 
 import cc.haoduoyu.demoapp.R;
-import cc.haoduoyu.demoapp.widget.GRecyclerViewAdapter;
-import cc.haoduoyu.demoapp.widget.GRecyclerViewHolder;
+import cc.haoduoyu.demoapp.grecyclerview.GRecyclerViewAdapter;
+import cc.haoduoyu.demoapp.grecyclerview.GRecyclerViewHolder;
 
 /**
  * Created by XP on 2016/1/27.

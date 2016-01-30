@@ -1,5 +1,6 @@
 package cc.haoduoyu.demoapp.utils;
 
+import android.content.Context;
 import android.widget.Toast;
 
 import cc.haoduoyu.demoapp.base.App;
@@ -20,8 +21,12 @@ public class ToastUtils {
     }
 
     public static void showToast(String s) {
+        showToast(App.getContext(), s);
+    }
+
+    public static void showToast(Context context, String s) {
         if (mToast == null) {
-            mToast = Toast.makeText(App.getContext(), s, Toast.LENGTH_SHORT);
+            mToast = Toast.makeText(context, s, Toast.LENGTH_SHORT);
             mToast.show();
             oneTime = System.currentTimeMillis();
         } else {

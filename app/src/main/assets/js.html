@@ -1,0 +1,29 @@
+<html>
+<script type="text/javascript">
+    function sayHello() {
+        alert("Hello")
+    }
+
+    function alertMessage(message) {
+        alert(message)
+    }
+
+    function toastMessage(message) {
+        window.control.showToast(message)
+    }
+
+    function sumToJava(number1, number2){
+       window.control.onSumResult(number1 + number2)
+    }
+
+    function javaCallJsWithArgs(arg){
+     document.getElementById("content").innerHTML +=
+         ("<br\>"+arg);
+}
+
+</script>
+<h1 style="font-size:18px;color:blue;">Java,Javascript Interaction In Android</h1>
+<div style="font-size:16px;color:green" id="content">content</div>
+<a style="font-size:15px;color:red" onClick="window.control.startFunction()">click to call java
+    code</a><br/>
+</html>
