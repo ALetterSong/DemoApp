@@ -14,7 +14,6 @@ import android.view.View;
  */
 public class CanvasActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,14 +21,12 @@ public class CanvasActivity extends AppCompatActivity {
         setContentView(view);
     }
 
-
     class CanvasView extends View {
 
         RectF mArcRectF;
         RectF mOvalRectF;
         RectF mRectF;
         RectF mRectFA;
-
 
         Paint mPointPaint;
         Paint mLinePaint;

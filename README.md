@@ -8,10 +8,12 @@ android demo and utils
  - [Span](/app/src/main/java/cc/haoduoyu/demoapp/span/)
  - [Date and Device Utils](/app/src/main/java/cc/haoduoyu/demoapp/device/)
 
-2016.1.30
+2016.2.1
 
  - [Canvas](/app/src/main/java/cc/haoduoyu/demoapp/canvas)
  - [WebView](/app/src/main/java/cc/haoduoyu/demoapp/webview)
+ - [ThreadDownload](/app/src/main/java/cc/haoduoyu/demoapp/downloadservice)
+ - [Sort](/app/src/main/java/cc/haoduoyu/demoapp/sort)
 
 
 

@@ -19,7 +19,9 @@ import butterknife.ButterKnife;
 import cc.haoduoyu.demoapp.base.Demo;
 import cc.haoduoyu.demoapp.canvas.CanvasActivity;
 import cc.haoduoyu.demoapp.device.DeviceActivity;
+import cc.haoduoyu.demoapp.downloadservice.DownloadActivity;
 import cc.haoduoyu.demoapp.dropdownlistview.DropDownListViewActivity;
+import cc.haoduoyu.demoapp.sort.SortActivity;
 import cc.haoduoyu.demoapp.span.SpanActivity;
 import cc.haoduoyu.demoapp.utils.ToastUtils;
 import cc.haoduoyu.demoapp.webview.WebViewActivity;
@@ -51,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
         mDemos.add(new Demo("DeviceActivity", new Intent(this, DeviceActivity.class)));
         mDemos.add(new Demo("CanvasActivity", new Intent(this, CanvasActivity.class)));
         mDemos.add(new Demo("WebViewActivity", new Intent(this, WebViewActivity.class)));
-
+        mDemos.add(new Demo("DownloadActivity", new Intent(this, DownloadActivity.class)));
+        mDemos.add(new Demo("SortActivity", new Intent(this, SortActivity.class)));
 
 
     }

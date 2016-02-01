@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <Button
+        android:id="@+id/selection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择排序" />
+
+    <Button
+        android:id="@+id/insertion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="插入排序" />
+
+    <Button
+        android:id="@+id/bubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="冒泡排序" />
+
+    <Button
+        android:id="@+id/quick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="快速排序" />
+
+    <TextView
+        android:id="@+id/sortTv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="New Text" />
+
+    <TextView
+        android:id="@+id/sortTv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Text" />
+
+    <TextView
+        android:id="@+id/sortTv3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Text" />
+
+    <TextView
+        android:id="@+id/sortTv4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Text" />
+
+
+</LinearLayout>
