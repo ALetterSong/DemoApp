@@ -15,7 +15,7 @@ android demo and utils
  - [ThreadDownload](/app/src/main/java/cc/haoduoyu/demoapp/downloadservice)
  - [Sort](/app/src/main/java/cc/haoduoyu/demoapp/sort)
  
-2016.2.1
+2016.2.25
  
  - [AsyncTask](/app/src/main/java/cc/haoduoyu/demoapp/asynctask)
  - [Utils](/app/src/main/java/cc/haoduoyu/demoapp/utils)
