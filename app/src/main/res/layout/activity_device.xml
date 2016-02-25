@@ -398,7 +398,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Device Width and Height"
+                    android:text="Device Width and Height："
                     android:textColor="?colorAccent"
                     android:textSize="15dp" />
 
@@ -410,6 +410,7 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -419,7 +420,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="NetWork"
+                    android:text="NetWork："
                     android:textColor="?colorAccent"
                     android:textSize="15dp" />
 

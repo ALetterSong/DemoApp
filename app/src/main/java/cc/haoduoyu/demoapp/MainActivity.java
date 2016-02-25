@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import cc.haoduoyu.demoapp.asynctask.AsyncTaskActivity;
 import cc.haoduoyu.demoapp.base.Demo;
 import cc.haoduoyu.demoapp.canvas.CanvasActivity;
 import cc.haoduoyu.demoapp.device.DeviceActivity;
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
         mDemos.add(new Demo("WebViewActivity", new Intent(this, WebViewActivity.class)));
         mDemos.add(new Demo("DownloadActivity", new Intent(this, DownloadActivity.class)));
         mDemos.add(new Demo("SortActivity", new Intent(this, SortActivity.class)));
+        mDemos.add(new Demo("AsyncTaskActivity", new Intent(this, AsyncTaskActivity.class)));
+
 
 
     }
