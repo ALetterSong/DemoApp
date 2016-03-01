@@ -52,72 +52,100 @@ import cc.haoduoyu.demoapp.R;
  * <ul>
  * principle see <a href="http://trinea.iteye.com/blog/1562281">http://trinea.iteye.com/blog/1562281</a>
  * </ul>
- * 
+ *
  * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2012-5-20
  */
 public class DropDownListView extends ListView implements OnScrollListener {
 
-    private boolean            isDropDownStyle         = true;
-    private boolean            isOnBottomStyle         = true;
-    private boolean            isAutoLoadOnBottom      = false;
+    private boolean isDropDownStyle = true;
+    private boolean isOnBottomStyle = true;
+    private boolean isAutoLoadOnBottom = false;
 
-    private String             headerDefaultText;
-    private String             headerPullText;
-    private String             headerReleaseText;
-    private String             headerLoadingText;
-    private String             footerDefaultText;
-    private String             footerLoadingText;
-    private String             footerNoMoreText;
+    private String headerDefaultText;
+    private String headerPullText;
+    private String headerReleaseText;
+    private String headerLoadingText;
+    private String footerDefaultText;
+    private String footerLoadingText;
+    private String footerNoMoreText;
 
-    private Context            context;
+    private Context context;
 
-    /** header layout view **/
-    private RelativeLayout     headerLayout;
-    private ImageView          headerImage;
-    private ProgressBar        headerProgressBar;
-    private TextView           headerText;
-    private TextView           headerSecondText;
+    /**
+     * header layout view
+     **/
+    private RelativeLayout headerLayout;
+    private ImageView headerImage;
+    private ProgressBar headerProgressBar;
+    private TextView headerText;
+    private TextView headerSecondText;
 
-    /** footer layout view **/
-    private RelativeLayout     footerLayout;
-    private ProgressBar        footerProgressBar;
-    private Button             footerButton;
+    /**
+     * footer layout view
+     **/
+    private RelativeLayout footerLayout;
+    private ProgressBar footerProgressBar;
+    private Button footerButton;
 
     private OnDropDownListener onDropDownListener;
-    private OnScrollListener   onScrollListener;
+    private OnScrollListener onScrollListener;
 
-    /** rate about drop down distance and header padding top when drop down **/
-    private float              headerPaddingTopRate    = 1.5f;
-    /** min distance which header can release to loading **/
-    private int                headerReleaseMinDistance;
+    /**
+     * rate about drop down distance and header padding top when drop down
+     **/
+    private float headerPaddingTopRate = 1.5f;
+    /**
+     * min distance which header can release to loading
+     **/
+    private int headerReleaseMinDistance;
 
-    /** whether bottom listener has more **/
-    private boolean            hasMore                 = true;
-    /** whether show footer loading progress bar when loading **/
-    private boolean            isShowFooterProgressBar = true;
-    /** whether show footer when no more data **/
-    private boolean            isShowFooterWhenNoMore  = false;
+    /**
+     * whether bottom listener has more
+     **/
+    private boolean hasMore = true;
+    /**
+     * whether show footer loading progress bar when loading
+     **/
+    private boolean isShowFooterProgressBar = true;
+    /**
+     * whether show footer when no more data
+     **/
+    private boolean isShowFooterWhenNoMore = false;
 
-    private int                currentScrollState;
-    private int                currentHeaderStatus;
+    private int currentScrollState;
+    private int currentHeaderStatus;
 
-    /** whether reached top, when has reached top, don't show header layout **/
-    private boolean            hasReachedTop           = false;
+    /**
+     * whether reached top, when has reached top, don't show header layout
+     **/
+    private boolean hasReachedTop = false;
 
-    /** image flip animation **/
-    private RotateAnimation    flipAnimation;
-    /** image reverse flip animation **/
-    private RotateAnimation    reverseFlipAnimation;
+    /**
+     * image flip animation
+     **/
+    private RotateAnimation flipAnimation;
+    /**
+     * image reverse flip animation
+     **/
+    private RotateAnimation reverseFlipAnimation;
 
-    /** header layout original height **/
-    private int                headerOriginalHeight;
-    /** header layout original padding top **/
-    private int                headerOriginalTopPadding;
-    /** y of point which user touch down **/
-    private float              actionDownPointY;
+    /**
+     * header layout original height
+     **/
+    private int headerOriginalHeight;
+    /**
+     * header layout original padding top
+     **/
+    private int headerOriginalTopPadding;
+    /**
+     * y of point which user touch down
+     **/
+    private float actionDownPointY;
 
-    /** whether is on bottom loading **/
-    private boolean            isOnBottomLoading       = false;
+    /**
+     * whether is on bottom loading
+     **/
+    private boolean isOnBottomLoading = false;
 
     public DropDownListView(Context context) {
         super(context);
@@ -181,12 +209,12 @@ public class DropDownListView extends ListView implements OnScrollListener {
         headerReleaseText = context.getString(R.string.drop_down_list_header_release_text);
         headerLoadingText = context.getString(R.string.drop_down_list_header_loading_text);
 
-        LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        headerLayout = (RelativeLayout)inflater.inflate(R.layout.drop_down_list_header, this, false);
-        headerText = (TextView)headerLayout.findViewById(R.id.drop_down_list_header_default_text);
-        headerImage = (ImageView)headerLayout.findViewById(R.id.drop_down_list_header_image);
-        headerProgressBar = (ProgressBar)headerLayout.findViewById(R.id.drop_down_list_header_progress_bar);
-        headerSecondText = (TextView)headerLayout.findViewById(R.id.drop_down_list_header_second_text);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        headerLayout = (RelativeLayout) inflater.inflate(R.layout.drop_down_list_header, this, false);
+        headerText = (TextView) headerLayout.findViewById(R.id.drop_down_list_header_default_text);
+        headerImage = (ImageView) headerLayout.findViewById(R.id.drop_down_list_header_image);
+        headerProgressBar = (ProgressBar) headerLayout.findViewById(R.id.drop_down_list_header_progress_bar);
+        headerSecondText = (TextView) headerLayout.findViewById(R.id.drop_down_list_header_second_text);
         headerLayout.setClickable(true);
         headerLayout.setOnClickListener(new OnClickListener() {
 
@@ -225,13 +253,13 @@ public class DropDownListView extends ListView implements OnScrollListener {
         footerLoadingText = context.getString(R.string.drop_down_list_footer_loading_text);
         footerNoMoreText = context.getString(R.string.drop_down_list_footer_no_more_text);
 
-        LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        footerLayout = (RelativeLayout)inflater.inflate(R.layout.drop_down_list_footer, this, false);
-        footerButton = (Button)footerLayout.findViewById(R.id.drop_down_list_footer_button);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        footerLayout = (RelativeLayout) inflater.inflate(R.layout.drop_down_list_footer, this, false);
+        footerButton = (Button) footerLayout.findViewById(R.id.drop_down_list_footer_button);
         footerButton.setDrawingCacheBackgroundColor(0);
         footerButton.setEnabled(true);
 
-        footerProgressBar = (ProgressBar)footerLayout.findViewById(R.id.drop_down_list_footer_progress_bar);
+        footerProgressBar = (ProgressBar) footerLayout.findViewById(R.id.drop_down_list_footer_progress_bar);
         addFooterView(footerLayout);
     }
 
@@ -278,7 +306,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * set whether auto load when on bottom
-     * 
+     *
      * @param isAutoLoadOnBottom
      */
     public void setAutoLoadOnBottom(boolean isAutoLoadOnBottom) {
@@ -287,7 +315,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * get whether show footer loading progress bar when loading
-     * 
+     *
      * @return the isShowFooterProgressBar
      */
     public boolean isShowFooterProgressBar() {
@@ -296,7 +324,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * set whether show footer loading progress bar when loading
-     * 
+     *
      * @param isShowFooterProgressBar
      */
     public void setShowFooterProgressBar(boolean isShowFooterProgressBar) {
@@ -305,7 +333,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * get isShowFooterWhenNoMore
-     * 
+     *
      * @return the isShowFooterWhenNoMore
      */
     public boolean isShowFooterWhenNoMore() {
@@ -314,7 +342,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * set isShowFooterWhenNoMore
-     * 
+     *
      * @param isShowFooterWhenNoMore the isShowFooterWhenNoMore to set
      */
     public void setShowFooterWhenNoMore(boolean isShowFooterWhenNoMore) {
@@ -323,7 +351,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * get footer button
-     * 
+     *
      * @return
      */
     public Button getFooterButton() {
@@ -500,7 +528,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * drop down complete, restore view status
-     * 
+     *
      * @param secondText display below header text, if null, not display
      */
     public void onDropDownComplete(CharSequence secondText) {
@@ -512,7 +540,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * set header second text
-     * 
+     *
      * @param secondText secondText display below header text, if null, not display
      */
     public void setHeaderSecondText(CharSequence secondText) {
@@ -588,7 +616,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * OnDropDownListener, called when header released
-     * 
+     *
      * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2012-5-31
      */
     public interface OnDropDownListener {
@@ -610,7 +638,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * set whether has more. if hasMore is false, onBottm will not be called when listView scroll to bottom
-     * 
+     *
      * @param hasMore
      */
     public void setHasMore(boolean hasMore) {
@@ -619,7 +647,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * get whether has more
-     * 
+     *
      * @return
      */
     public boolean isHasMore() {
@@ -628,7 +656,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * get header layout view
-     * 
+     *
      * @return
      */
     public RelativeLayout getHeaderLayout() {
@@ -637,7 +665,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * get footer layout view
-     * 
+     *
      * @return
      */
     public RelativeLayout getFooterLayout() {
@@ -646,7 +674,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * get rate about drop down distance and header padding top when drop down
-     * 
+     *
      * @return headerPaddingTopRate
      */
     public float getHeaderPaddingTopRate() {
@@ -655,7 +683,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * set rate about drop down distance and header padding top when drop down
-     * 
+     *
      * @param headerPaddingTopRate
      */
     public void setHeaderPaddingTopRate(float headerPaddingTopRate) {
@@ -664,7 +692,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * get min distance which header can release to loading
-     * 
+     *
      * @return headerReleaseMinDistance
      */
     public int getHeaderReleaseMinDistance() {
@@ -673,7 +701,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * set min distance which header can release to loading
-     * 
+     *
      * @param headerReleaseMinDistance
      */
     public void setHeaderReleaseMinDistance(int headerReleaseMinDistance) {
@@ -682,7 +710,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /***
      * get header default text, default is R.string.drop_down_list_header_default_text
-     * 
+     *
      * @return
      */
     public String getHeaderDefaultText() {
@@ -691,7 +719,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * set header default text, default is R.string.drop_down_list_header_default_text
-     * 
+     *
      * @param headerDefaultText
      */
     public void setHeaderDefaultText(String headerDefaultText) {
@@ -703,7 +731,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * get header pull text, default is R.string.drop_down_list_header_pull_text
-     * 
+     *
      * @return
      */
     public String getHeaderPullText() {
@@ -712,7 +740,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * set header pull text, default is R.string.drop_down_list_header_pull_text
-     * 
+     *
      * @param headerPullText
      */
     public void setHeaderPullText(String headerPullText) {
@@ -721,7 +749,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * get header release text, default is R.string.drop_down_list_header_release_text
-     * 
+     *
      * @return
      */
     public String getHeaderReleaseText() {
@@ -730,7 +758,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * set header release text, default is R.string.drop_down_list_header_release_text
-     * 
+     *
      * @param headerReleaseText
      */
     public void setHeaderReleaseText(String headerReleaseText) {
@@ -739,7 +767,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * get header loading text, default is R.string.drop_down_list_header_loading_text
-     * 
+     *
      * @return
      */
     public String getHeaderLoadingText() {
@@ -748,7 +776,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * set header loading text, default is R.string.drop_down_list_header_loading_text
-     * 
+     *
      * @param headerLoadingText
      */
     public void setHeaderLoadingText(String headerLoadingText) {
@@ -757,7 +785,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * get footer default text, default is R.string.drop_down_list_footer_default_text
-     * 
+     *
      * @return
      */
     public String getFooterDefaultText() {
@@ -766,7 +794,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * set footer default text, default is R.string.drop_down_list_footer_default_text
-     * 
+     *
      * @param footerDefaultText
      */
     public void setFooterDefaultText(String footerDefaultText) {
@@ -778,7 +806,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * get footer loading text, default is R.string.drop_down_list_footer_loading_text
-     * 
+     *
      * @return
      */
     public String getFooterLoadingText() {
@@ -787,7 +815,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * set footer loading text, default is R.string.drop_down_list_footer_loading_text
-     * 
+     *
      * @param footerLoadingText
      */
     public void setFooterLoadingText(String footerLoadingText) {
@@ -796,7 +824,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * get footer no more text, default is R.string.drop_down_list_footer_no_more_text
-     * 
+     *
      * @return
      */
     public String getFooterNoMoreText() {
@@ -805,24 +833,30 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * set footer no more text, default is R.string.drop_down_list_footer_no_more_text
-     * 
+     *
      * @param footerNoMoreText
      */
     public void setFooterNoMoreText(String footerNoMoreText) {
         this.footerNoMoreText = footerNoMoreText;
     }
 
-    /** status which you can click to load, init satus **/
-    public static final int HEADER_STATUS_CLICK_TO_LOAD     = 1;
+    /**
+     * status which you can click to load, init satus
+     **/
+    public static final int HEADER_STATUS_CLICK_TO_LOAD = 1;
     /**
      * status which you can drop down and then release to excute onDropDownListener, when height of header layout lower
      * than a value
      **/
     public static final int HEADER_STATUS_DROP_DOWN_TO_LOAD = 2;
-    /** status which you can release to excute onDropDownListener, when height of header layout higher than a value **/
-    public static final int HEADER_STATUS_RELEASE_TO_LOAD   = 3;
-    /** status which is loading **/
-    public static final int HEADER_STATUS_LOADING           = 4;
+    /**
+     * status which you can release to excute onDropDownListener, when height of header layout higher than a value
+     **/
+    public static final int HEADER_STATUS_RELEASE_TO_LOAD = 3;
+    /**
+     * status which is loading
+     **/
+    public static final int HEADER_STATUS_LOADING = 4;
 
     /**
      * set header status to {@link #HEADER_STATUS_CLICK_TO_LOAD}
@@ -895,7 +929,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * adjust header padding according to motion event
-     * 
+     *
      * @param ev
      */
     private void adjustHeaderPadding(MotionEvent ev) {
@@ -910,7 +944,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
                 headerLayout
                         .setPadding(
                                 headerLayout.getPaddingLeft(),
-                                (int)(((ev.getHistoricalY(i) - actionDownPointY) - headerOriginalHeight) / headerPaddingTopRate),
+                                (int) (((ev.getHistoricalY(i) - actionDownPointY) - headerOriginalHeight) / headerPaddingTopRate),
                                 headerLayout.getPaddingRight(), headerLayout.getPaddingBottom());
             }
         }
@@ -926,7 +960,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * measure header layout
-     * 
+     *
      * @param child
      */
     private void measureHeaderLayout(View child) {
@@ -948,7 +982,7 @@ public class DropDownListView extends ListView implements OnScrollListener {
 
     /**
      * get attrs
-     * 
+     *
      * @param context
      * @param attrs
      */

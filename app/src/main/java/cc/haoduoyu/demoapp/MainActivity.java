@@ -24,7 +24,9 @@ import cc.haoduoyu.demoapp.downloadservice.DownloadActivity;
 import cc.haoduoyu.demoapp.dropdownlistview.DropDownListViewActivity;
 import cc.haoduoyu.demoapp.sort.SortActivity;
 import cc.haoduoyu.demoapp.span.SpanActivity;
+import cc.haoduoyu.demoapp.stickylayout.StickyLayoutActivity;
 import cc.haoduoyu.demoapp.utils.ToastUtils;
+import cc.haoduoyu.demoapp.viewdraghelper.ViewDragHelperActivity;
 import cc.haoduoyu.demoapp.webview.WebViewActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -57,9 +59,8 @@ public class MainActivity extends AppCompatActivity {
         mDemos.add(new Demo("DownloadActivity", new Intent(this, DownloadActivity.class)));
         mDemos.add(new Demo("SortActivity", new Intent(this, SortActivity.class)));
         mDemos.add(new Demo("AsyncTaskActivity", new Intent(this, AsyncTaskActivity.class)));
-
-
-
+        mDemos.add(new Demo("ViewDragHelperActivity", new Intent(this, ViewDragHelperActivity.class)));
+        mDemos.add(new Demo("StickyLayoutActivity", new Intent(this, StickyLayoutActivity.class)));
     }
 
 

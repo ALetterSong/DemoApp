@@ -30,6 +30,8 @@
         <activity android:name=".downloadservice.DownloadActivity"></activity>
         <activity android:name=".sort.SortActivity"></activity>
         <activity android:name=".asynctask.AsyncTaskActivity"></activity>
+        <activity android:name=".viewdraghelper.ViewDragHelperActivity"></activity>
+        <activity android:name=".stickylayout.StickyLayoutActivity"></activity>
 
         <service android:name=".downloadservice.DownloadService"></service>
     </application>
