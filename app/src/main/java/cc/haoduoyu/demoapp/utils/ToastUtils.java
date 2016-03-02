@@ -3,10 +3,8 @@ package cc.haoduoyu.demoapp.utils;
 import android.content.Context;
 import android.widget.Toast;
 
-import cc.haoduoyu.demoapp.base.App;
-
 /**
- * 优化的Toast工具类
+ * Toast工具类
  * Created by XP on 2016/1/9.
  */
 public class ToastUtils {
@@ -18,10 +16,6 @@ public class ToastUtils {
     private static long twoTime = 0;
 
     private ToastUtils() {
-    }
-
-    public static void showToast(String s) {
-        showToast(App.getContext(), s);
     }
 
     public static void showToast(Context context, String s) {

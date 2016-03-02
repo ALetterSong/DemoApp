@@ -20,10 +20,11 @@ android demo and utils
  - [AsyncTask](/app/src/main/java/cc/haoduoyu/demoapp/asynctask)
  - [Utils](/app/src/main/java/cc/haoduoyu/demoapp/utils)
  
-2016.3.1
+2016.3.2
  
  - [ViewDragHelper](/app/src/main/java/cc/haoduoyu/demoapp/viewdraghelper)
  - [StickyLayout](/app/src/main/java/cc/haoduoyu/demoapp/stickylayout)
+ - [CustomDialog](/app/src/main/java/cc/haoduoyu/demoapp/dialog)
 
 
 

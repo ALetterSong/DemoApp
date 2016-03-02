@@ -1,7 +1,12 @@
 package cc.haoduoyu.demoapp;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,6 +25,7 @@ import cc.haoduoyu.demoapp.asynctask.AsyncTaskActivity;
 import cc.haoduoyu.demoapp.base.Demo;
 import cc.haoduoyu.demoapp.canvas.CanvasActivity;
 import cc.haoduoyu.demoapp.device.DeviceActivity;
+import cc.haoduoyu.demoapp.dialog.DialogActivity;
 import cc.haoduoyu.demoapp.downloadservice.DownloadActivity;
 import cc.haoduoyu.demoapp.dropdownlistview.DropDownListViewActivity;
 import cc.haoduoyu.demoapp.sort.SortActivity;
@@ -43,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        checkPermission();
         initData();
         setupRecyclerView();
     }
@@ -61,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         mDemos.add(new Demo("AsyncTaskActivity", new Intent(this, AsyncTaskActivity.class)));
         mDemos.add(new Demo("ViewDragHelperActivity", new Intent(this, ViewDragHelperActivity.class)));
         mDemos.add(new Demo("StickyLayoutActivity", new Intent(this, StickyLayoutActivity.class)));
+        mDemos.add(new Demo("DialogActivity", new Intent(this, DialogActivity.class)));
     }
 
 
@@ -81,6 +89,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void checkPermission() {
+
+        if (ContextCompat.checkSelfPermission(this, (Manifest.permission.READ_PHONE_STATE))
+                != PackageManager.PERMISSION_GRANTED) {
+            //申请权限
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE},
+                    1);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 1) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission Granted
+            } else {
+                // Permission Denied
+                finish();
+            }
+        }
     }
 
 
@@ -146,6 +177,9 @@ public class MainActivity extends AppCompatActivity {
 
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            ToastUtils.showToast(MainActivity.this, getString(R.string.select));
+            Intent intent = new Intent(Settings.ACTION_APPLICATION_SETTINGS);
+            startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
