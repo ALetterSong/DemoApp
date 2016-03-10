@@ -18,6 +18,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -28,6 +31,7 @@ import cc.haoduoyu.demoapp.device.DeviceActivity;
 import cc.haoduoyu.demoapp.dialog.DialogActivity;
 import cc.haoduoyu.demoapp.downloadservice.DownloadActivity;
 import cc.haoduoyu.demoapp.dropdownlistview.DropDownListViewActivity;
+import cc.haoduoyu.demoapp.rxjava.RxJavaActivity;
 import cc.haoduoyu.demoapp.sort.SortActivity;
 import cc.haoduoyu.demoapp.span.SpanActivity;
 import cc.haoduoyu.demoapp.stickylayout.StickyLayoutActivity;
@@ -58,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
     private void initData() {
         mDemos = new ArrayList<>();
         mDemos.add(new Demo("DropDownListViewActivity", new Intent(this, DropDownListViewActivity.class)));
-//        mDemos.add(new Demo("RxJavaActivity", new Intent(this, RxJavaActivity.class)));
         mDemos.add(new Demo("SpanActivity", new Intent(this, SpanActivity.class)));
         mDemos.add(new Demo("DeviceActivity", new Intent(this, DeviceActivity.class)));
         mDemos.add(new Demo("CanvasActivity", new Intent(this, CanvasActivity.class)));
@@ -69,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
         mDemos.add(new Demo("ViewDragHelperActivity", new Intent(this, ViewDragHelperActivity.class)));
         mDemos.add(new Demo("StickyLayoutActivity", new Intent(this, StickyLayoutActivity.class)));
         mDemos.add(new Demo("DialogActivity", new Intent(this, DialogActivity.class)));
+        mDemos.add(new Demo("RxJavaActivity", new Intent(this, RxJavaActivity.class)));
+
     }
 
 
@@ -92,24 +97,43 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkPermission() {
-
-        if (ContextCompat.checkSelfPermission(this, (Manifest.permission.READ_PHONE_STATE))
-                != PackageManager.PERMISSION_GRANTED) {
-            //申请权限
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE},
+        final List<String> permissionsList = new ArrayList<>();
+        //需要添加的权限
+        addPermission(permissionsList, Manifest.permission.READ_EXTERNAL_STORAGE);
+        addPermission(permissionsList, Manifest.permission.READ_PHONE_STATE);
+        if (permissionsList.size() > 0) {
+            ActivityCompat.requestPermissions(this, permissionsList.toArray(new String[permissionsList.size()]),
                     1);
+        } else {
+
         }
+    }
+
+    private boolean addPermission(List<String> permissionsList, String permission) {
+        if (ActivityCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+            permissionsList.add(permission);
+        }
+        return true;
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 1) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permission Granted
+            Map<String, Integer> perms = new HashMap<>();
+            //在只有某些权限需要处理时防止NullPointerException，因为这些权限已经被允许不在permissions中
+            perms.put(Manifest.permission.READ_EXTERNAL_STORAGE, PackageManager.PERMISSION_GRANTED);
+            perms.put(Manifest.permission.READ_PHONE_STATE, PackageManager.PERMISSION_GRANTED);
+
+            for (int i = 0; i < permissions.length; i++)
+                perms.put(permissions[i], grantResults[i]);
+            // 检查
+            if (perms.get(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+                    && perms.get(Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
+
             } else {
-                // Permission Denied
-                finish();
+                //Denied
+
             }
         }
     }

@@ -13,6 +13,7 @@ import java.util.LinkedList;
 import cc.haoduoyu.demoapp.R;
 
 /**
+ * http://blog.csdn.net/singwhatiwanna/article/details/25546871
  * Created by XP on 2016/3/1.
  */
 public class StickyLayoutActivity extends Activity implements StickyLayout.OnGiveUpTouchEventListener {
@@ -30,11 +31,11 @@ public class StickyLayoutActivity extends Activity implements StickyLayout.OnGiv
         setContentView(R.layout.activity_stickylayout);
         stickyLayout = (StickyLayout) findViewById(R.id.sticky_layout);
         listView = (ListView) findViewById(R.id.list_view);
-
-        listItems = new LinkedList<String>();
+        listItems = new LinkedList<>();
         listItems.addAll(Arrays.asList(mStrings));
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listItems);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listItems);
         listView.setAdapter(adapter);
+        stickyLayout.setOnGiveUpTouchEventListener(this);
 
     }
 

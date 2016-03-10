@@ -13,16 +13,26 @@
         <LinearLayout
             android:id="@+id/sticky_header"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="300dp"
             android:background="#88AAAA"
-            android:gravity="center"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                android:text="StickyLayout"
+                android:textSize="30sp"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="It is awesome"
+                android:textSize="15sp"
+                android:textColor="#ffffff" />
 
         </LinearLayout>
 
