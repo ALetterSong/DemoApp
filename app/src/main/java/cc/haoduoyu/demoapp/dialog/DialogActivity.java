@@ -1,7 +1,7 @@
 package cc.haoduoyu.demoapp.dialog;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -11,7 +11,7 @@ import cc.haoduoyu.demoapp.utils.ToastUtils;
 /**
  * Created by XP on 2016/3/2.
  */
-public class DialogActivity extends Activity {
+public class DialogActivity extends AppCompatActivity {
     private Button button1;
     private Button button2;
     private CustomDialog dialog;

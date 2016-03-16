@@ -3,10 +3,10 @@
     package="cc.haoduoyu.demoapp">
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -22,18 +22,45 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".dropdownlistview.DropDownListViewActivity"/>
-        <activity android:name=".span.SpanActivity"/>
-        <activity android:name=".device.DeviceActivity"/>
-        <activity android:name=".canvas.CanvasActivity"/>
-        <activity android:name=".webview.WebViewActivity"/>
-        <activity android:name=".downloadservice.DownloadActivity"/>
-        <activity android:name=".sort.SortActivity"/>
-        <activity android:name=".asynctask.AsyncTaskActivity"/>
-        <activity android:name=".viewdraghelper.ViewDragHelperActivity"/>
-        <activity android:name=".stickylayout.StickyLayoutActivity"/>
-        <activity android:name=".dialog.DialogActivity"/>
-        <activity android:name=".rxjava.RxJavaActivity"/>
+        <activity
+            android:name=".dropdownlistview.DropDownListViewActivity"
+            android:label="DropDownListViewActivity" />
+        <activity
+            android:name=".span.SpanActivity"
+            android:label="SpanActivity" />
+        <activity
+            android:name=".device.DeviceActivity"
+            android:label="DeviceActivity" />
+        <activity
+            android:name=".canvas.CanvasActivity"
+            android:label="CanvasActivity" />
+        <activity
+            android:name=".webview.WebViewActivity"
+            android:label="WebViewActivity" />
+        <activity
+            android:name=".downloadservice.DownloadActivity"
+            android:label="DownloadActivity" />
+        <activity
+            android:name=".sort.SortActivity"
+            android:label="SortActivity" />
+        <activity
+            android:name=".asynctask.AsyncTaskActivity"
+            android:label="AsyncTaskActivity" />
+        <activity
+            android:name=".viewdraghelper.ViewDragHelperActivity"
+            android:label="ViewDragHelperActivity" />
+        <activity
+            android:name=".stickylayout.StickyLayoutActivity"
+            android:label="StickyLayoutActivity" />
+        <activity
+            android:name=".dialog.DialogActivity"
+            android:label="DialogActivity" />
+        <activity
+            android:name=".rxjava.RxJavaActivity"
+            android:label="RxJavaActivity" />
+        <activity
+            android:name=".mvp.login.MVPActivity"
+            android:label="MVPActivity" />
 
         <service android:name=".downloadservice.DownloadService"></service>
     </application>

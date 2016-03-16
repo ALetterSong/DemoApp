@@ -29,6 +29,7 @@ android demo and utils
 2016.3.10
  
  - [RxJava](/app/src/main/java/cc/haoduoyu/demoapp/rxjava)
+ - [MVP](/app/src/main/java/cc/haoduoyu/demoapp/mvp)
 
 
 

@@ -1,7 +1,8 @@
 package cc.haoduoyu.demoapp.stickylayout;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -16,7 +17,7 @@ import cc.haoduoyu.demoapp.R;
  * http://blog.csdn.net/singwhatiwanna/article/details/25546871
  * Created by XP on 2016/3/1.
  */
-public class StickyLayoutActivity extends Activity implements StickyLayout.OnGiveUpTouchEventListener {
+public class StickyLayoutActivity extends AppCompatActivity implements StickyLayout.OnGiveUpTouchEventListener {
     private StickyLayout stickyLayout;
     private ListView listView;
     private ArrayAdapter<String> adapter;

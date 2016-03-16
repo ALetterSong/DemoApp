@@ -17,4 +17,9 @@
 
     <string name="image_content">Image</string>
     <string name="select">select DemoApp</string>
+
+    <string name="user_name">username</string>
+    <string name="password">password</string>
+    <string name="log_in">Log in</string>
+
 </resources>

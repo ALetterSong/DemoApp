@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -31,6 +30,7 @@ import cc.haoduoyu.demoapp.device.DeviceActivity;
 import cc.haoduoyu.demoapp.dialog.DialogActivity;
 import cc.haoduoyu.demoapp.downloadservice.DownloadActivity;
 import cc.haoduoyu.demoapp.dropdownlistview.DropDownListViewActivity;
+import cc.haoduoyu.demoapp.mvp.login.MVPActivity;
 import cc.haoduoyu.demoapp.rxjava.RxJavaActivity;
 import cc.haoduoyu.demoapp.sort.SortActivity;
 import cc.haoduoyu.demoapp.span.SpanActivity;
@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         mDemos.add(new Demo("StickyLayoutActivity", new Intent(this, StickyLayoutActivity.class)));
         mDemos.add(new Demo("DialogActivity", new Intent(this, DialogActivity.class)));
         mDemos.add(new Demo("RxJavaActivity", new Intent(this, RxJavaActivity.class)));
+        mDemos.add(new Demo("MVPActivity", new Intent(this, MVPActivity.class)));
 
     }
 
@@ -151,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
             holder.demo = mDemos.get(position);
-            holder.titleTv.setText(mDemos.get(position).title);
+            holder.titleTv.setText((position + 1) + ".  " + mDemos.get(position).title);
         }
 
         @Override
