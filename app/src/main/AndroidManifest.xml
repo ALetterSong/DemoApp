@@ -62,6 +62,10 @@
             android:name=".mvp.login.MVPActivity"
             android:label="MVPActivity" />
 
+        <activity
+            android:name=".aidl.AidlActivity"
+            android:label="AidlActivity" />
+
         <service android:name=".downloadservice.DownloadService"></service>
     </application>
 </manifest>

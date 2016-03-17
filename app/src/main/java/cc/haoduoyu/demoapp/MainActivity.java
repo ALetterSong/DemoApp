@@ -23,6 +23,7 @@ import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import cc.haoduoyu.demoapp.aidl.AidlActivity;
 import cc.haoduoyu.demoapp.asynctask.AsyncTaskActivity;
 import cc.haoduoyu.demoapp.base.Demo;
 import cc.haoduoyu.demoapp.canvas.CanvasActivity;
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         mDemos.add(new Demo("DialogActivity", new Intent(this, DialogActivity.class)));
         mDemos.add(new Demo("RxJavaActivity", new Intent(this, RxJavaActivity.class)));
         mDemos.add(new Demo("MVPActivity", new Intent(this, MVPActivity.class)));
-
+        mDemos.add(new Demo("AidlActivity", new Intent(this, AidlActivity.class)));
     }
 
 

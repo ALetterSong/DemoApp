@@ -30,6 +30,7 @@ android demo and utils
  
  - [RxJava](/app/src/main/java/cc/haoduoyu/demoapp/rxjava)
  - [MVP](/app/src/main/java/cc/haoduoyu/demoapp/mvp)
+ - [Aidl](/app/src/main/java/cc/haoduoyu/demoapp/aidl)
 
 
 
