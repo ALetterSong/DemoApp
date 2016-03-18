@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:more="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@android:color/transparent"
+        android:focusable="false"
+        android:singleLine="true"
+        android:text="实现TextView单行文本水平触摸滑动效果。 因为EditText需要编辑和移动光标的缘故，使得它是可以水平滑动的。因此我们只需要设置其为透明背景，并且不可以获得焦点。"
+        android:textSize="25sp" />
+
+    <cc.haoduoyu.demoapp.moretextview.MoreTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        more:maxLine="5"
+        more:text="@string/content"
+        more:textColor="@android:color/black"
+        more:textSize="12sp">
+
+    </cc.haoduoyu.demoapp.moretextview.MoreTextView>
+
+</LinearLayout>

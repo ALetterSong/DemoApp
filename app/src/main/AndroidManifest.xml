@@ -66,6 +66,10 @@
             android:name=".aidl.AidlActivity"
             android:label="AidlActivity" />
 
+        <activity
+            android:name=".moretextview.MoreTextViewActivity"
+            android:label="MoreTextViewActivity" />
+
         <service android:name=".downloadservice.DownloadService"></service>
     </application>
 </manifest>

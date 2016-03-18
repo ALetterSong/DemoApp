@@ -3,8 +3,8 @@ package cc.haoduoyu.demoapp;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -31,6 +31,7 @@ import cc.haoduoyu.demoapp.device.DeviceActivity;
 import cc.haoduoyu.demoapp.dialog.DialogActivity;
 import cc.haoduoyu.demoapp.downloadservice.DownloadActivity;
 import cc.haoduoyu.demoapp.dropdownlistview.DropDownListViewActivity;
+import cc.haoduoyu.demoapp.moretextview.MoreTextViewActivity;
 import cc.haoduoyu.demoapp.mvp.login.MVPActivity;
 import cc.haoduoyu.demoapp.rxjava.RxJavaActivity;
 import cc.haoduoyu.demoapp.sort.SortActivity;
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         mDemos.add(new Demo("RxJavaActivity", new Intent(this, RxJavaActivity.class)));
         mDemos.add(new Demo("MVPActivity", new Intent(this, MVPActivity.class)));
         mDemos.add(new Demo("AidlActivity", new Intent(this, AidlActivity.class)));
+        mDemos.add(new Demo("MoreTextViewActivity", new Intent(this, MoreTextViewActivity.class)));
     }
 
 
@@ -203,9 +205,15 @@ public class MainActivity extends AppCompatActivity {
 
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            ToastUtils.showToast(MainActivity.this, getString(R.string.select));
-            Intent intent = new Intent(Settings.ACTION_APPLICATION_SETTINGS);
-            startActivity(intent);
+//            ToastUtils.showToast(MainActivity.this, getString(R.string.select));
+//            Intent intent = new Intent(Settings.ACTION_APPLICATION_SETTINGS);
+//            startActivity(intent);
+            Uri uri = Uri.parse(getString(R.string.github_url));
+            startActivity(new Intent(Intent.ACTION_VIEW, uri));
+            return true;
+        } else if (id == R.id.action_intro) {
+            Uri uri = Uri.parse(getString(R.string.github_intro__url));
+            startActivity(new Intent(Intent.ACTION_VIEW, uri));
             return true;
         }
         return super.onOptionsItemSelected(item);
