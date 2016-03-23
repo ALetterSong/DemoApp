@@ -33,11 +33,11 @@ import cc.haoduoyu.demoapp.downloadservice.DownloadActivity;
 import cc.haoduoyu.demoapp.dropdownlistview.DropDownListViewActivity;
 import cc.haoduoyu.demoapp.moretextview.MoreTextViewActivity;
 import cc.haoduoyu.demoapp.mvp.login.MVPActivity;
+import cc.haoduoyu.demoapp.popupwindow.PopupWindowActivity;
 import cc.haoduoyu.demoapp.rxjava.RxJavaActivity;
 import cc.haoduoyu.demoapp.sort.SortActivity;
 import cc.haoduoyu.demoapp.span.SpanActivity;
 import cc.haoduoyu.demoapp.stickylayout.StickyLayoutActivity;
-import cc.haoduoyu.demoapp.utils.ToastUtils;
 import cc.haoduoyu.demoapp.viewdraghelper.ViewDragHelperActivity;
 import cc.haoduoyu.demoapp.webview.WebViewActivity;
 
@@ -78,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
         mDemos.add(new Demo("MVPActivity", new Intent(this, MVPActivity.class)));
         mDemos.add(new Demo("AidlActivity", new Intent(this, AidlActivity.class)));
         mDemos.add(new Demo("MoreTextViewActivity", new Intent(this, MoreTextViewActivity.class)));
+//        mDemos.add(new Demo("LoginActivity", new Intent(this, LoginActivity.class)));
+        mDemos.add(new Demo("PopupWindowActivity", new Intent(this, PopupWindowActivity.class)));
     }
 
 
@@ -91,7 +93,9 @@ public class MainActivity extends AppCompatActivity {
             public void onTouch(View v, TextView titleView, TextView enterView, Demo demo) {
                 if (demo == null) return;
                 if (v == titleView) {
-                    ToastUtils.showToast(MainActivity.this, demo.title);
+//                    ToastUtils.showToast(MainActivity.this, demo.title);
+                    startActivity(demo.intent);
+
                 } else if (v == enterView) {
                     startActivity(demo.intent);
                 }

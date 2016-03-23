@@ -45,5 +45,10 @@ Aidl的使用
 ##### [MoreTextView](/app/src/main/java/cc/haoduoyu/demoapp/moretextview) 
 单行长文本水平滑动效果和多行文本折叠展开效果
 
+#####2016.3.23
+
+##### [PopupWindow](/app/src/main/java/cc/haoduoyu/demoapp/popupwindow) 
+PopupWindow和PopupMenu的使用
+
 
 
