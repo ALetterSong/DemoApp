@@ -23,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".IntroActivity" />
         <activity
             android:name=".dropdownlistview.DropDownListViewActivity"
             android:label="DropDownListViewActivity" />
@@ -71,9 +72,11 @@
             android:name=".moretextview.MoreTextViewActivity"
             android:label="MoreTextViewActivity" />
 
-        <activity android:name=".login.LoginActivity"></activity>
-        <activity android:name=".login.WebViewActivity"></activity>
-        <activity android:name=".popupwindow.PopupWindowActivity"></activity>
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".login.WebViewActivity" />
+        <activity android:name=".popupwindow.PopupWindowActivity" />
+        <activity android:name=".autoscrollviewpager.AutoScrollViewPagerActivity"/>
+
 
         <service android:name=".downloadservice.DownloadService"></service>
     </application>

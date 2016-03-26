@@ -25,12 +25,12 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import cc.haoduoyu.demoapp.aidl.AidlActivity;
 import cc.haoduoyu.demoapp.asynctask.AsyncTaskActivity;
+import cc.haoduoyu.demoapp.autoscrollviewpager.AutoScrollViewPagerActivity;
 import cc.haoduoyu.demoapp.base.Demo;
 import cc.haoduoyu.demoapp.canvas.CanvasActivity;
 import cc.haoduoyu.demoapp.device.DeviceActivity;
 import cc.haoduoyu.demoapp.dialog.DialogActivity;
 import cc.haoduoyu.demoapp.downloadservice.DownloadActivity;
-import cc.haoduoyu.demoapp.dropdownlistview.DropDownListViewActivity;
 import cc.haoduoyu.demoapp.moretextview.MoreTextViewActivity;
 import cc.haoduoyu.demoapp.mvp.login.MVPActivity;
 import cc.haoduoyu.demoapp.popupwindow.PopupWindowActivity;
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initData() {
         mDemos = new ArrayList<>();
-        mDemos.add(new Demo("DropDownListViewActivity", new Intent(this, DropDownListViewActivity.class)));
+//        mDemos.add(new Demo("DropDownListViewActivity", new Intent(this, DropDownListViewActivity.class)));
         mDemos.add(new Demo("SpanActivity", new Intent(this, SpanActivity.class)));
         mDemos.add(new Demo("DeviceActivity", new Intent(this, DeviceActivity.class)));
         mDemos.add(new Demo("CanvasActivity", new Intent(this, CanvasActivity.class)));
@@ -80,12 +80,13 @@ public class MainActivity extends AppCompatActivity {
         mDemos.add(new Demo("MoreTextViewActivity", new Intent(this, MoreTextViewActivity.class)));
 //        mDemos.add(new Demo("LoginActivity", new Intent(this, LoginActivity.class)));
         mDemos.add(new Demo("PopupWindowActivity", new Intent(this, PopupWindowActivity.class)));
+        mDemos.add(new Demo("AutoScrollViewPagerActivity", new Intent(this, AutoScrollViewPagerActivity.class)));
     }
 
 
     private void setupRecyclerView() {
         mAdapter = new MyAdapter();
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));//!
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));//!
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
         mAdapter.setListener(new OnClickItemListener() {
@@ -216,8 +217,9 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(Intent.ACTION_VIEW, uri));
             return true;
         } else if (id == R.id.action_intro) {
-            Uri uri = Uri.parse(getString(R.string.github_intro__url));
-            startActivity(new Intent(Intent.ACTION_VIEW, uri));
+//            Uri uri = Uri.parse(getString(R.string.github_intro__url));
+//            startActivity(new Intent(Intent.ACTION_VIEW, uri));
+            startActivity(new Intent(this, IntroActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);
