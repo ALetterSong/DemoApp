@@ -75,7 +75,8 @@
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".login.WebViewActivity" />
         <activity android:name=".popupwindow.PopupWindowActivity" />
-        <activity android:name=".autoscrollviewpager.AutoScrollViewPagerActivity"/>
+        <activity android:name=".autoscrollviewpager.AutoScrollViewPagerActivity" />
+        <activity android:name=".mytest.UITest" />
 
 
         <service android:name=".downloadservice.DownloadService"></service>

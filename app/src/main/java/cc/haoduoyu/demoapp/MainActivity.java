@@ -9,13 +9,16 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.TextView;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,6 +36,7 @@ import cc.haoduoyu.demoapp.dialog.DialogActivity;
 import cc.haoduoyu.demoapp.downloadservice.DownloadActivity;
 import cc.haoduoyu.demoapp.moretextview.MoreTextViewActivity;
 import cc.haoduoyu.demoapp.mvp.login.MVPActivity;
+import cc.haoduoyu.demoapp.mytest.UITest;
 import cc.haoduoyu.demoapp.popupwindow.PopupWindowActivity;
 import cc.haoduoyu.demoapp.rxjava.RxJavaActivity;
 import cc.haoduoyu.demoapp.sort.SortActivity;
@@ -81,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
 //        mDemos.add(new Demo("LoginActivity", new Intent(this, LoginActivity.class)));
         mDemos.add(new Demo("PopupWindowActivity", new Intent(this, PopupWindowActivity.class)));
         mDemos.add(new Demo("AutoScrollViewPagerActivity", new Intent(this, AutoScrollViewPagerActivity.class)));
+        mDemos.add(new Demo("TestActivity", new Intent(this, UITest.class)));
     }
 
 
@@ -224,4 +229,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
