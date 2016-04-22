@@ -54,7 +54,7 @@ PopupWindow和PopupMenu的使用
 
 #####2016.4.20
 
-##### [Test](/app/src/main/java/cc/haoduoyu/demoapp/mytest) 
+##### [Test](/app/src) 
 单元测试和UI测试
 
 
