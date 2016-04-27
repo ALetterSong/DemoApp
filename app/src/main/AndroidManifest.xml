@@ -72,11 +72,27 @@
             android:name=".moretextview.MoreTextViewActivity"
             android:label="MoreTextViewActivity" />
 
-        <activity android:name=".login.LoginActivity" />
-        <activity android:name=".login.WebViewActivity" />
-        <activity android:name=".popupwindow.PopupWindowActivity" />
-        <activity android:name=".autoscrollviewpager.AutoScrollViewPagerActivity" />
-        <activity android:name=".mytest.UITest" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:label="LoginActivity" />
+        <activity
+            android:name=".login.WebViewActivity"
+            android:label="WebViewActivity" />
+        <activity
+            android:name=".popupwindow.PopupWindowActivity"
+            android:label="PopupWindowActivity" />
+        <activity
+            android:name=".autoscrollviewpager.AutoScrollViewPagerActivity"
+            android:label="AutoScrollViewPagerActivity" />
+        <activity
+            android:name=".mytest.UITest"
+            android:label="UITest" />
+        <activity
+            android:name=".pulltozoomscrollview.PTZScrollViewActivity"
+            android:label="PTZScrollViewActivity" />
+        <activity
+            android:name=".notification.NotificationActivity"
+            android:label="NotificationActivity" />
 
 
         <service android:name=".downloadservice.DownloadService"></service>

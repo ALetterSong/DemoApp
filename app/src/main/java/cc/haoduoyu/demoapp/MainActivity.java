@@ -37,7 +37,9 @@ import cc.haoduoyu.demoapp.downloadservice.DownloadActivity;
 import cc.haoduoyu.demoapp.moretextview.MoreTextViewActivity;
 import cc.haoduoyu.demoapp.mvp.login.MVPActivity;
 import cc.haoduoyu.demoapp.mytest.UITest;
+import cc.haoduoyu.demoapp.notification.NotificationActivity;
 import cc.haoduoyu.demoapp.popupwindow.PopupWindowActivity;
+import cc.haoduoyu.demoapp.pulltozoomscrollview.PTZScrollViewActivity;
 import cc.haoduoyu.demoapp.rxjava.RxJavaActivity;
 import cc.haoduoyu.demoapp.sort.SortActivity;
 import cc.haoduoyu.demoapp.span.SpanActivity;
@@ -68,24 +70,26 @@ public class MainActivity extends AppCompatActivity {
     private void initData() {
         mDemos = new ArrayList<>();
 //        mDemos.add(new Demo("DropDownListViewActivity", new Intent(this, DropDownListViewActivity.class)));
-        mDemos.add(new Demo("SpanActivity", new Intent(this, SpanActivity.class)));
-        mDemos.add(new Demo("DeviceActivity", new Intent(this, DeviceActivity.class)));
-        mDemos.add(new Demo("CanvasActivity", new Intent(this, CanvasActivity.class)));
-        mDemos.add(new Demo("WebViewActivity", new Intent(this, WebViewActivity.class)));
-        mDemos.add(new Demo("DownloadActivity", new Intent(this, DownloadActivity.class)));
-        mDemos.add(new Demo("SortActivity", new Intent(this, SortActivity.class)));
-        mDemos.add(new Demo("AsyncTaskActivity", new Intent(this, AsyncTaskActivity.class)));
-        mDemos.add(new Demo("ViewDragHelperActivity", new Intent(this, ViewDragHelperActivity.class)));
-        mDemos.add(new Demo("StickyLayoutActivity", new Intent(this, StickyLayoutActivity.class)));
-        mDemos.add(new Demo("DialogActivity", new Intent(this, DialogActivity.class)));
-        mDemos.add(new Demo("RxJavaActivity", new Intent(this, RxJavaActivity.class)));
-        mDemos.add(new Demo("MVPActivity", new Intent(this, MVPActivity.class)));
-        mDemos.add(new Demo("AidlActivity", new Intent(this, AidlActivity.class)));
-        mDemos.add(new Demo("MoreTextViewActivity", new Intent(this, MoreTextViewActivity.class)));
+        mDemos.add(new Demo("Span", new Intent(this, SpanActivity.class)));
+        mDemos.add(new Demo("Device", new Intent(this, DeviceActivity.class)));
+        mDemos.add(new Demo("Canvas", new Intent(this, CanvasActivity.class)));
+        mDemos.add(new Demo("WebView", new Intent(this, WebViewActivity.class)));
+        mDemos.add(new Demo("Download", new Intent(this, DownloadActivity.class)));
+        mDemos.add(new Demo("Sort", new Intent(this, SortActivity.class)));
+        mDemos.add(new Demo("AsyncTask", new Intent(this, AsyncTaskActivity.class)));
+        mDemos.add(new Demo("ViewDragHelper", new Intent(this, ViewDragHelperActivity.class)));
+        mDemos.add(new Demo("StickyLayout", new Intent(this, StickyLayoutActivity.class)));
+        mDemos.add(new Demo("Dialog", new Intent(this, DialogActivity.class)));
+        mDemos.add(new Demo("RxJava", new Intent(this, RxJavaActivity.class)));
+        mDemos.add(new Demo("MVP", new Intent(this, MVPActivity.class)));
+        mDemos.add(new Demo("Aidl", new Intent(this, AidlActivity.class)));
+        mDemos.add(new Demo("MoreTextView", new Intent(this, MoreTextViewActivity.class)));
 //        mDemos.add(new Demo("LoginActivity", new Intent(this, LoginActivity.class)));
-        mDemos.add(new Demo("PopupWindowActivity", new Intent(this, PopupWindowActivity.class)));
-        mDemos.add(new Demo("AutoScrollViewPagerActivity", new Intent(this, AutoScrollViewPagerActivity.class)));
-        mDemos.add(new Demo("TestActivity", new Intent(this, UITest.class)));
+        mDemos.add(new Demo("PopupWindow", new Intent(this, PopupWindowActivity.class)));
+        mDemos.add(new Demo("AutoScrollViewPager", new Intent(this, AutoScrollViewPagerActivity.class)));
+        mDemos.add(new Demo("Test", new Intent(this, UITest.class)));
+        mDemos.add(new Demo("PTZScrollView", new Intent(this, PTZScrollViewActivity.class)));
+        mDemos.add(new Demo("Notification", new Intent(this, NotificationActivity.class)));
     }
 
 

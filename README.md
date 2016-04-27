@@ -56,6 +56,10 @@ PopupWindow和PopupMenu的使用
 
 ##### [Test](/app/src) 
 单元测试和UI测试
+##### [PullToZoomScrollView](/app/src/main/java/cc/haoduoyu/demoapp/pulltozoomscrollview) 
+下拉放大ScrollView
+##### [Notification](/app/src/main/java/cc/haoduoyu/demoapp/notification) 
+通知样式
 
 
 

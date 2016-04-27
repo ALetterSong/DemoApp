@@ -52,5 +52,12 @@ PopupWindow和PopupMenu的使用
 ##### [AutoScrollViewPager](/app/src/main/java/cc/haoduoyu/demoapp/autoscrollviewpager) 
 自动循环ViewPager
 
+#####2016.4.20
+
+##### [Test](/app/src) 
+单元测试和UI测试
+##### [PullToZoomScrollView](/app/src/main/java/cc/haoduoyu/demoapp/pulltozoomscrollview) 
+下拉放大ScrollView
+
 
 
