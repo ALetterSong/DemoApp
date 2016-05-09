@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ import cc.haoduoyu.demoapp.aidl.AidlActivity;
 import cc.haoduoyu.demoapp.asynctask.AsyncTaskActivity;
 import cc.haoduoyu.demoapp.autoscrollviewpager.AutoScrollViewPagerActivity;
 import cc.haoduoyu.demoapp.base.Demo;
+import cc.haoduoyu.demoapp.camera.CaptureActivity;
 import cc.haoduoyu.demoapp.canvas.CanvasActivity;
 import cc.haoduoyu.demoapp.device.DeviceActivity;
 import cc.haoduoyu.demoapp.dialog.DialogActivity;
@@ -41,6 +43,7 @@ import cc.haoduoyu.demoapp.notification.NotificationActivity;
 import cc.haoduoyu.demoapp.popupwindow.PopupWindowActivity;
 import cc.haoduoyu.demoapp.pulltozoomscrollview.PTZScrollViewActivity;
 import cc.haoduoyu.demoapp.rxjava.RxJavaActivity;
+import cc.haoduoyu.demoapp.rxjava.retrofit.RxJavaWithRetrofitActivity;
 import cc.haoduoyu.demoapp.sort.SortActivity;
 import cc.haoduoyu.demoapp.span.SpanActivity;
 import cc.haoduoyu.demoapp.stickylayout.StickyLayoutActivity;
@@ -90,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
         mDemos.add(new Demo("Test", new Intent(this, UITest.class)));
         mDemos.add(new Demo("PTZScrollView", new Intent(this, PTZScrollViewActivity.class)));
         mDemos.add(new Demo("Notification", new Intent(this, NotificationActivity.class)));
+        mDemos.add(new Demo("Camera", new Intent(this, CaptureActivity.class)));
+        mDemos.add(new Demo("RxJava&Retrofit", new Intent(this, RxJavaWithRetrofitActivity.class)));
     }
 
 
@@ -118,7 +123,9 @@ public class MainActivity extends AppCompatActivity {
         final List<String> permissionsList = new ArrayList<>();
         //需要添加的权限
         addPermission(permissionsList, Manifest.permission.READ_EXTERNAL_STORAGE);
+        addPermission(permissionsList, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         addPermission(permissionsList, Manifest.permission.READ_PHONE_STATE);
+        addPermission(permissionsList, Manifest.permission.CAMERA);
         if (permissionsList.size() > 0) {
             ActivityCompat.requestPermissions(this, permissionsList.toArray(new String[permissionsList.size()]),
                     1);
@@ -142,12 +149,16 @@ public class MainActivity extends AppCompatActivity {
             //在只有某些权限需要处理时防止NullPointerException，因为这些权限已经被允许不在permissions中
             perms.put(Manifest.permission.READ_EXTERNAL_STORAGE, PackageManager.PERMISSION_GRANTED);
             perms.put(Manifest.permission.READ_PHONE_STATE, PackageManager.PERMISSION_GRANTED);
+            perms.put(Manifest.permission.WRITE_EXTERNAL_STORAGE, PackageManager.PERMISSION_GRANTED);
+            perms.put(Manifest.permission.CAMERA, PackageManager.PERMISSION_GRANTED);
 
             for (int i = 0; i < permissions.length; i++)
                 perms.put(permissions[i], grantResults[i]);
             // 检查
             if (perms.get(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
-                    && perms.get(Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
+                    && perms.get(Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED
+                    && perms.get(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+                    && perms.get(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
 
             } else {
                 //Denied
@@ -155,7 +166,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
 
     class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         private OnClickItemListener listener;

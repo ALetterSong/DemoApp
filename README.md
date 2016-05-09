@@ -60,6 +60,8 @@ PopupWindow和PopupMenu的使用
 下拉放大ScrollView
 ##### [Notification](/app/src/main/java/cc/haoduoyu/demoapp/notification) 
 通知样式
+##### [RxJava&Retrofit](/app/src/main/java/cc/haoduoyu/demoapp/rxjava/retrofit)
+RxJava 与 Retrofit 结合使用
 
 
 

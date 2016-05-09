@@ -226,12 +226,12 @@ public class RxJavaActivity extends AppCompatActivity {
 
         Observable.just(drawableRes)
                 /**
-                 * 1.Func1 和 Action 的区别在于， Func1 包装的是有返回值的方法。
-                 * 2.map() 方法将参数中的 Integer 对象转换成一个 Drawable 对象后返回，
-                 *   而在经过 map() 方法后，事件的参数类型也由 Integer 转为了 Drawable。
-                 *   这种直接变换对象并返回的，是最常见的也最容易理解的变换。
-                 *   不过 RxJava 的变换远不止这样，它不仅可以针对事件对象，
-                 *   还可以针对整个事件队列，这使得 RxJava 变得非常灵活。
+                 * 1. Func1 和 Action 的区别在于， Func1 包装的是有返回值的方法。
+                 * 2. map() 方法将参数中的 Integer 对象转换成一个 Drawable 对象后返回，
+                 *    而在经过 map() 方法后，事 件的参数类型也由 Integer 转为了 Drawable。
+                 *    这种直接变换对象并返回的，是最常见的也最容易理解的变换。
+                 *    不过 RxJava 的变换远不止这样，它不仅可以针对事件对象，
+                 *    还可以针对整个事件队列，这使得 RxJava 变得非常灵活。
                  */
                 .map(new Func1<Integer, Drawable>() {
                     @Override

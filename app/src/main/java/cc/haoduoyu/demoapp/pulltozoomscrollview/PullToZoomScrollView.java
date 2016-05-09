@@ -2,6 +2,7 @@ package cc.haoduoyu.demoapp.pulltozoomscrollview;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.os.Handler;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -46,7 +47,6 @@ public class PullToZoomScrollView extends ScrollView {
         wm.getDefaultDisplay().getMetrics(metrics);
         mScreenHeight = metrics.heightPixels;
         mTopViewHeight = mScreenHeight / 2 - (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 90, context.getResources().getDisplayMetrics());
-
     }
 
     /**
