@@ -1,6 +1,7 @@
 package cc.haoduoyu.demoapp;
 
 import android.app.Application;
+import android.content.Context;
 import android.os.Environment;
 
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
@@ -13,19 +14,29 @@ import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 
+import cc.haoduoyu.demoapp.rxjava.retrofit.RetrofitSingleton;
+
 /**
  * Created by XP on 2016/3/19.
  */
 public class App extends Application {
 
+    private static Context mContext;
     public static final String APP_DIR = Environment.getExternalStorageDirectory() + "/demoapp";
     public static final String APP_IMAGE = APP_DIR + "/image";
+
+    public static Context getContext() {
+        return mContext;
+    }
 
     @Override
     public void onCreate() {
         super.onCreate();
+        mContext = this;
+        RetrofitSingleton.i.init();
         initImageLoader();
     }
+
     private void initImageLoader() {
         DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
                 .cacheInMemory(false)

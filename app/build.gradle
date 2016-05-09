@@ -33,7 +33,7 @@ dependencies {
     compile 'com.mcxiaoke.volley:library:1.0.19'
     compile 'us.feras.mdv:markdownview:1.1.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'net.bozho.easycamera:easycamera:0.0.1:aar@aar'
+    compile 'com.apkfuns.logutils:library:1.0.6'
 
     compile 'io.reactivex:rxjava:1.1.0'
     compile 'io.reactivex:rxandroid:1.1.0'
@@ -41,7 +41,6 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
-
 
     androidTestCompile 'com.android.support:support-annotations:23.1.0'
     androidTestCompile 'com.android.support.test:runner:0.4.1'

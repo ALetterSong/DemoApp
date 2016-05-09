@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         mDemos.add(new Demo("PTZScrollView", new Intent(this, PTZScrollViewActivity.class)));
         mDemos.add(new Demo("Notification", new Intent(this, NotificationActivity.class)));
         mDemos.add(new Demo("Camera", new Intent(this, CaptureActivity.class)));
-        mDemos.add(new Demo("RxJava&Retrofit", new Intent(this, RxJavaWithRetrofitActivity.class)));
+        mDemos.add(new Demo("RxJava&RetrofitSingleton", new Intent(this, RxJavaWithRetrofitActivity.class)));
     }
 
 

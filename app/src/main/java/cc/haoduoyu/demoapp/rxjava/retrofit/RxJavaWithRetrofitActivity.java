@@ -58,16 +58,17 @@ public class RxJavaWithRetrofitActivity extends AppCompatActivity implements Vie
     //just use retrofit
     //A（观察者）对 B（被观察者）的某种变化高度敏感，需要在 B 变化的一瞬间做出反应。
     private void getMovie() {
-        String baseUrl = "https://api.douban.com/v2/movie/";
+//        String baseUrl = "https://api.douban.com/v2/movie/";
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(baseUrl)
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .build();
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl(baseUrl)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+//                .build();
 
-        MovieService movieService = retrofit.create(MovieService.class);
-        Call<Movie> call = movieService.getTopMovie(0, 10);
+//        MovieService movieService = retrofit.create(MovieService.class);
+        Call<Movie> call =
+                RetrofitSingleton.i.getMovieService().getTopMovie(0, 10);
         call.enqueue(new Callback<Movie>() {
             @Override
             public void onResponse(Call<Movie> call, Response<Movie> response) {
@@ -83,17 +84,19 @@ public class RxJavaWithRetrofitActivity extends AppCompatActivity implements Vie
 
     //retrofit with rxjava
     private void getMovie2() {
-        String baseUrl = "https://api.douban.com/v2/movie/";
+//        String baseUrl = "https://api.douban.com/v2/movie/";
+//
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl(baseUrl)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+//                .build();
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(baseUrl)
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .build();
+//        MovieService movieService = retrofit.create(MovieService.class);
 
-        MovieService2 movieService = retrofit.create(MovieService2.class);
-
-        movieService.getTopMovie(0, 10)
+//        movieService
+        RetrofitSingleton.i.getMovieService()
+                .getTopMovie2(0, 10)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<Movie>() {
