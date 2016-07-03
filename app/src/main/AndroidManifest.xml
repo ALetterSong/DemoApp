@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cc.haoduoyu.demoapp">
+          package="cc.haoduoyu.demoapp">
 
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
     <!--在sdcard中创建/删除文件的权限 -->
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
 
     <application
         android:name=".App"
@@ -22,91 +22,97 @@
             android:name=".MainActivity"
             android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".IntroActivity" />
+        <activity android:name=".IntroActivity"/>
         <activity
             android:name=".dropdownlistview.DropDownListViewActivity"
-            android:label="DropDownListViewActivity" />
+            android:label="DropDownListViewActivity"/>
         <activity
             android:name=".span.SpanActivity"
-            android:label="SpanActivity" />
+            android:label="SpanActivity"/>
         <activity
             android:name=".device.DeviceActivity"
-            android:label="DeviceActivity" />
+            android:label="DeviceActivity"/>
         <activity
             android:name=".canvas.CanvasActivity"
-            android:label="CanvasActivity" />
+            android:label="CanvasActivity"/>
         <activity
             android:name=".webview.WebViewActivity"
-            android:label="WebViewActivity" />
+            android:label="WebViewActivity"/>
         <activity
             android:name=".downloadservice.DownloadActivity"
-            android:label="DownloadActivity" />
+            android:label="DownloadActivity"/>
         <activity
             android:name=".sort.SortActivity"
-            android:label="SortActivity" />
+            android:label="SortActivity"/>
         <activity
             android:name=".asynctask.AsyncTaskActivity"
-            android:label="AsyncTaskActivity" />
+            android:label="AsyncTaskActivity"/>
         <activity
             android:name=".viewdraghelper.ViewDragHelperActivity"
-            android:label="ViewDragHelperActivity" />
+            android:label="ViewDragHelperActivity"/>
         <activity
             android:name=".stickylayout.StickyLayoutActivity"
-            android:label="StickyLayoutActivity" />
+            android:label="StickyLayoutActivity"/>
         <activity
             android:name=".dialog.DialogActivity"
-            android:label="DialogActivity" />
+            android:label="DialogActivity"/>
         <activity
             android:name=".rxjava.RxJavaActivity"
-            android:label="RxJavaActivity" />
+            android:label="RxJavaActivity"/>
         <activity
             android:name=".mvp.login.MVPActivity"
-            android:label="MVPActivity" />
+            android:label="MVPActivity"/>
 
         <activity
             android:name=".aidl.AidlActivity"
-            android:label="AidlActivity" />
+            android:label="AidlActivity"/>
 
         <activity
             android:name=".moretextview.MoreTextViewActivity"
-            android:label="MoreTextViewActivity" />
+            android:label="MoreTextViewActivity"/>
 
         <activity
             android:name=".login.LoginActivity"
-            android:label="LoginActivity" />
+            android:label="LoginActivity"/>
         <activity
             android:name=".login.WebViewActivity"
-            android:label="WebViewActivity" />
+            android:label="WebViewActivity"/>
         <activity
             android:name=".popupwindow.PopupWindowActivity"
-            android:label="PopupWindowActivity" />
+            android:label="PopupWindowActivity"/>
         <activity
             android:name=".autoscrollviewpager.AutoScrollViewPagerActivity"
-            android:label="AutoScrollViewPagerActivity" />
+            android:label="AutoScrollViewPagerActivity"/>
         <activity
             android:name=".mytest.UITest"
-            android:label="UITest" />
+            android:label="UITest"/>
         <activity
             android:name=".pulltozoomscrollview.PTZScrollViewActivity"
-            android:label="PTZScrollViewActivity" />
+            android:label="PTZScrollViewActivity"/>
         <activity
             android:name=".notification.NotificationActivity"
-            android:label="NotificationActivity" />
+            android:label="NotificationActivity"/>
         <activity
             android:name=".camera.CaptureActivity"
             android:label="CaptureActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".webview.ShowImageActivity"
-            android:label="ShowImageActivity" />
+            android:label="ShowImageActivity"/>
         <activity
             android:name=".rxjava.retrofit.RxJavaWithRetrofitActivity"
-            android:label="RxJavaWithRetrofitActivity" />
+            android:label="RxJavaWithRetrofitActivity"/>
+        <activity
+            android:name=".scrollablelayout.ScrollableLayoutActivity"
+            android:label="ScrollableLayoutActivity"/>
+        <activity
+            android:name=".itemtouchhelper.ItemTouchHelperActivity"
+            android:label="ItemTouchHelperActivity"/>
 
 
         <service android:name=".downloadservice.DownloadService"></service>

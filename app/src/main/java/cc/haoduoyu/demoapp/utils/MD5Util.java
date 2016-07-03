@@ -6,7 +6,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * MS5
+ * MD5
  */
 public class MD5Util {
     private static final String TAG = MD5Util.class.getSimpleName();

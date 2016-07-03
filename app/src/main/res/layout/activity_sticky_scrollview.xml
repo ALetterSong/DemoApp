@@ -1,0 +1,57 @@
+<cc.haoduoyu.demoapp.scrollablelayout.StickyScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_hover"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:gravity="center"
+            android:text="这是头部"/>
+
+        <FrameLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#AAff0000"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="这是固定部分"
+                    android:textSize="16sp"
+                    />
+
+                <Button
+                    android:id="@+id/btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="点我一下"
+                    />
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <cc.haoduoyu.demoapp.grecyclerview.GRecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </LinearLayout>
+</cc.haoduoyu.demoapp.scrollablelayout.StickyScrollView>

@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * basic camera preview
  */
-public class CameraPreview2 extends SurfaceView implements SurfaceHolder.Callback {
+public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
 
     private SurfaceHolder mHolder;
     private Camera mCamera;
@@ -24,7 +24,7 @@ public class CameraPreview2 extends SurfaceView implements SurfaceHolder.Callbac
     private MyOrientationDetector cameraOrientation;
     private Context mContext;
 
-    public CameraPreview2(Context context, Camera camera) {
+    public CameraPreview(Context context, Camera camera) {
         super(context);
         mContext = context;
         mCamera = camera;

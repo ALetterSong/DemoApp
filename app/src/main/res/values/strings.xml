@@ -27,4 +27,25 @@
     <string name="intro">介绍</string>
     <string name="github_intro__url">https://github.com/bigggge/DemoApp/blob/master/README.md</string>
 
+    <array name="items">
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+        <item>Five</item>
+        <item>Six</item>
+        <item>Seven</item>
+        <item>Eight</item>
+        <item>Nine</item>
+        <item>Ten</item>
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+    </array>
+
 </resources>

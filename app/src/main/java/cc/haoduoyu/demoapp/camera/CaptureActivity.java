@@ -17,14 +17,14 @@ import java.io.IOException;
 
 import cc.haoduoyu.demoapp.R;
 import cc.haoduoyu.demoapp.camera.cameramanager.CameraManager;
-import cc.haoduoyu.demoapp.camera.cameramanager.CameraPreview2;
+import cc.haoduoyu.demoapp.camera.cameramanager.CameraPreview;
 import cc.haoduoyu.demoapp.utils.Log;
 
 
 public class CaptureActivity extends Activity {
 
     private Camera mCamera;
-    private CameraPreview2 mPreview;
+    private CameraPreview mPreview;
     private CameraManager mCameraManager;
     private FrameLayout scanPreview;
     private Button takePicture;
@@ -90,7 +90,7 @@ public class CaptureActivity extends Activity {
 
         mCamera = mCameraManager.getCamera();
 //        mPreview = new CameraPreview(this, mCamera);
-        mPreview = new CameraPreview2(this, mCamera);
+        mPreview = new CameraPreview(this, mCamera);
         scanPreview.addView(mPreview);
 
 //        LogUtils.d("initViews()");

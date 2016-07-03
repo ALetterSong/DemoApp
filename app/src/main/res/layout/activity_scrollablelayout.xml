@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cc.haoduoyu.demoapp.scrollablelayout.ScrollableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollableLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- header -->
+    <!--the first child view will follow the scrollview scroll.-->
+
+    <RelativeLayout
+        android:id="@+id/rl_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00ffe5"
+        android:padding="@dimen/dp_50">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="header"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+    <!-- content View -->
+
+    <!--the second child view will be a navigator,
+        it will be sticking on the top when ItemView scrolls,
+        it is not necessary to add if you don't want-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/dp_20"
+        android:text="Navigator"
+        android:background="#fd73aa"
+        android:textSize="15sp"/>
+
+    <!--ScrollView support ViewPager, RecyclerView, ScrollView, ListView, WebView-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</cc.haoduoyu.demoapp.scrollablelayout.ScrollableLayout>

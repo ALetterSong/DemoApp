@@ -238,11 +238,11 @@ public class BitmapUtil {
         return bytes;
     }
 
-    public byte[] compressBitmapQuikly(String filePath) {
+    public byte[] compressBitmapQuickly(String filePath) {
         return compressBitmapToBytes(filePath, 480, 800, 50);
     }
 
-    public byte[] compressBitmapQuiklySmallTo(String filePath, int maxLenth) {
+    public byte[] compressBitmapQuicklySmallTo(String filePath, int maxLenth) {
         return compressBitmapSmallTo(filePath, 480, 800, maxLenth);
     }
 }

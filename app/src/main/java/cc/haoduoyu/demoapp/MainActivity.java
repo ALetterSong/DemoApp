@@ -9,17 +9,13 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.TextView;
-import android.widget.VideoView;
 
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -36,6 +32,7 @@ import cc.haoduoyu.demoapp.canvas.CanvasActivity;
 import cc.haoduoyu.demoapp.device.DeviceActivity;
 import cc.haoduoyu.demoapp.dialog.DialogActivity;
 import cc.haoduoyu.demoapp.downloadservice.DownloadActivity;
+import cc.haoduoyu.demoapp.itemtouchhelper.ItemTouchHelperActivity;
 import cc.haoduoyu.demoapp.moretextview.MoreTextViewActivity;
 import cc.haoduoyu.demoapp.mvp.login.MVPActivity;
 import cc.haoduoyu.demoapp.mytest.UITest;
@@ -44,6 +41,7 @@ import cc.haoduoyu.demoapp.popupwindow.PopupWindowActivity;
 import cc.haoduoyu.demoapp.pulltozoomscrollview.PTZScrollViewActivity;
 import cc.haoduoyu.demoapp.rxjava.RxJavaActivity;
 import cc.haoduoyu.demoapp.rxjava.retrofit.RxJavaWithRetrofitActivity;
+import cc.haoduoyu.demoapp.scrollablelayout.ScrollableLayoutActivity;
 import cc.haoduoyu.demoapp.sort.SortActivity;
 import cc.haoduoyu.demoapp.span.SpanActivity;
 import cc.haoduoyu.demoapp.stickylayout.StickyLayoutActivity;
@@ -95,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
         mDemos.add(new Demo("Notification", new Intent(this, NotificationActivity.class)));
         mDemos.add(new Demo("Camera", new Intent(this, CaptureActivity.class)));
         mDemos.add(new Demo("RxJava&RetrofitSingleton", new Intent(this, RxJavaWithRetrofitActivity.class)));
+        mDemos.add(new Demo("ScrollableLayoutActivity", new Intent(this, ScrollableLayoutActivity.class)));
+        mDemos.add(new Demo("ItemTouchHelperActivity", new Intent(this, ItemTouchHelperActivity.class)));
     }
 
 
@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+    public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         private OnClickItemListener listener;
 
         @Override
