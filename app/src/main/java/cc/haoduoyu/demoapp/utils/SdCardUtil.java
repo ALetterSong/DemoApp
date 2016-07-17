@@ -27,7 +27,7 @@ public class SdCardUtil {
      * is sd card available.
      * @return true if available
      */
-    public boolean isSdCardAvailable() {
+    public static boolean isSdCardAvailable() {
         return Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState());
     }
 

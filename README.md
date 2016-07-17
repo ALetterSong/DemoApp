@@ -29,8 +29,6 @@ AsyncTask的使用
 工具类集合
 ##### [ViewDragHelper](/app/src/main/java/cc/haoduoyu/demoapp/viewdraghelper) 
 ViewDragHelper的使用
-##### [StickyLayout](/app/src/main/java/cc/haoduoyu/demoapp/stickylayout) 
-头部固定可伸缩的Layout
 #####  [CustomDialog](/app/src/main/java/cc/haoduoyu/demoapp/dialog) 
 自定义Dialog
  
@@ -60,8 +58,6 @@ PopupWindow和PopupMenu的使用
 下拉放大ScrollView
 ##### [Notification](/app/src/main/java/cc/haoduoyu/demoapp/notification) 
 通知样式
-##### [Camera](/app/src/main/java/cc/haoduoyu/demoapp/camera)
-相机
 ##### [RxJava&Retrofit](/app/src/main/java/cc/haoduoyu/demoapp/rxjava/retrofit)
 RxJava 与 Retrofit 结合使用
 
@@ -71,6 +67,11 @@ RxJava 与 Retrofit 结合使用
 可添加Header View且Scroll View头部可固定Layout
 ##### [ItemTouchHelper](/app/src/main/java/cc/haoduoyu/demoapp/itemtouchhelper)
 滑动删除，拖动排序RecyclerView
+
+#####2016.7.17
+
+##### [AudioRecorder](/app/src/main/java/cc/haoduoyu/demoapp/audiorecorder)
+按住录音
 
 
 

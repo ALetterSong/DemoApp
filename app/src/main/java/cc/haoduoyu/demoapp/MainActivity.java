@@ -25,6 +25,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import cc.haoduoyu.demoapp.aidl.AidlActivity;
 import cc.haoduoyu.demoapp.asynctask.AsyncTaskActivity;
+import cc.haoduoyu.demoapp.audiorecorder.VoiceRecordActivity;
 import cc.haoduoyu.demoapp.autoscrollviewpager.AutoScrollViewPagerActivity;
 import cc.haoduoyu.demoapp.base.Demo;
 import cc.haoduoyu.demoapp.camera.CaptureActivity;
@@ -95,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         mDemos.add(new Demo("RxJava&RetrofitSingleton", new Intent(this, RxJavaWithRetrofitActivity.class)));
         mDemos.add(new Demo("ScrollableLayoutActivity", new Intent(this, ScrollableLayoutActivity.class)));
         mDemos.add(new Demo("ItemTouchHelperActivity", new Intent(this, ItemTouchHelperActivity.class)));
+        mDemos.add(new Demo("VoiceRecordActivity", new Intent(this, VoiceRecordActivity.class)));
     }
 
 
@@ -126,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
         addPermission(permissionsList, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         addPermission(permissionsList, Manifest.permission.READ_PHONE_STATE);
         addPermission(permissionsList, Manifest.permission.CAMERA);
+        addPermission(permissionsList, Manifest.permission.RECORD_AUDIO);
         if (permissionsList.size() > 0) {
             ActivityCompat.requestPermissions(this, permissionsList.toArray(new String[permissionsList.size()]),
                     1);
@@ -151,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
             perms.put(Manifest.permission.READ_PHONE_STATE, PackageManager.PERMISSION_GRANTED);
             perms.put(Manifest.permission.WRITE_EXTERNAL_STORAGE, PackageManager.PERMISSION_GRANTED);
             perms.put(Manifest.permission.CAMERA, PackageManager.PERMISSION_GRANTED);
+            perms.put(Manifest.permission.RECORD_AUDIO, PackageManager.PERMISSION_GRANTED);
 
             for (int i = 0; i < permissions.length; i++)
                 perms.put(permissions[i], grantResults[i]);
@@ -158,7 +162,8 @@ public class MainActivity extends AppCompatActivity {
             if (perms.get(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
                     && perms.get(Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED
                     && perms.get(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
-                    && perms.get(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+                    && perms.get(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
+                    && perms.get(Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
 
             } else {
                 //Denied
