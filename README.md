@@ -71,7 +71,7 @@ RxJava 与 Retrofit 结合使用
 #####2016.7.17
 
 ##### [AudioRecorder](/app/src/main/java/cc/haoduoyu/demoapp/audiorecorder)
-按住录音
+按住录音/按住说话
 
 
 
