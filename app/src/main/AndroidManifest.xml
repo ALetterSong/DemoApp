@@ -119,6 +119,9 @@
         <activity
             android:name=".audiorecorder.VoiceRecordActivity"
             android:label="VoiceRecordActivity"/>
+        <activity
+            android:name=".dagger.ui.DaggerActivity"
+            android:label="DaggerActivity"/>
 
 
         <service android:name=".downloadservice.DownloadService"></service>

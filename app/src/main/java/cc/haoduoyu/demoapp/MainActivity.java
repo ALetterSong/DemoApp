@@ -30,6 +30,7 @@ import cc.haoduoyu.demoapp.autoscrollviewpager.AutoScrollViewPagerActivity;
 import cc.haoduoyu.demoapp.base.Demo;
 import cc.haoduoyu.demoapp.camera.CaptureActivity;
 import cc.haoduoyu.demoapp.canvas.CanvasActivity;
+import cc.haoduoyu.demoapp.dagger.ui.DaggerActivity;
 import cc.haoduoyu.demoapp.device.DeviceActivity;
 import cc.haoduoyu.demoapp.dialog.DialogActivity;
 import cc.haoduoyu.demoapp.downloadservice.DownloadActivity;
@@ -94,9 +95,10 @@ public class MainActivity extends AppCompatActivity {
         mDemos.add(new Demo("Notification", new Intent(this, NotificationActivity.class)));
         mDemos.add(new Demo("Camera", new Intent(this, CaptureActivity.class)));
         mDemos.add(new Demo("RxJava&RetrofitSingleton", new Intent(this, RxJavaWithRetrofitActivity.class)));
-        mDemos.add(new Demo("ScrollableLayoutActivity", new Intent(this, ScrollableLayoutActivity.class)));
-        mDemos.add(new Demo("ItemTouchHelperActivity", new Intent(this, ItemTouchHelperActivity.class)));
-        mDemos.add(new Demo("VoiceRecordActivity", new Intent(this, VoiceRecordActivity.class)));
+        mDemos.add(new Demo("ScrollableLayout", new Intent(this, ScrollableLayoutActivity.class)));
+        mDemos.add(new Demo("ItemTouchHelper", new Intent(this, ItemTouchHelperActivity.class)));
+        mDemos.add(new Demo("VoiceRecord", new Intent(this, VoiceRecordActivity.class)));
+        mDemos.add(new Demo("Dagger2", new Intent(this, DaggerActivity.class)));
     }
 
 

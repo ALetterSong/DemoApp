@@ -1,6 +1,6 @@
 # DemoApp
 
-#####2016.1.27
+##### 2016.1.27
 ##### [DropDownListView](/app/src/main/java/cc/haoduoyu/demoapp/dropdownlistview/) 
 下拉刷新和底部自动加载ListView
 ##### [GRecyclerView](/app/src/main/java/cc/haoduoyu/demoapp/grecyclerview/) 
@@ -10,7 +10,7 @@ Span的使用
 ##### [Date and Device Utils](/app/src/main/java/cc/haoduoyu/demoapp/device/) 
 日期和设备工具类
 
-#####2016.2.1
+##### 2016.2.1
 
 ##### [Canvas](/app/src/main/java/cc/haoduoyu/demoapp/canvas) 
 Canvas的使用
@@ -21,7 +21,7 @@ WebView与JavaScript配合使用
 ##### [Sort](/app/src/main/java/cc/haoduoyu/demoapp/sort) 
 排序算法
  
-#####2016.2.25
+##### 2016.2.25
  
 ##### [AsyncTask](/app/src/main/java/cc/haoduoyu/demoapp/asynctask) 
 AsyncTask的使用
@@ -32,7 +32,7 @@ ViewDragHelper的使用
 #####  [CustomDialog](/app/src/main/java/cc/haoduoyu/demoapp/dialog) 
 自定义Dialog
  
-#####2016.3.10
+##### 2016.3.10
  
 ##### [RxJava](/app/src/main/java/cc/haoduoyu/demoapp/rxjava) 
 RxJava的使用
@@ -43,14 +43,14 @@ Aidl的使用
 ##### [MoreTextView](/app/src/main/java/cc/haoduoyu/demoapp/moretextview) 
 单行长文本水平滑动效果和多行文本折叠展开效果
 
-#####2016.3.23
+##### 2016.3.23
 
 ##### [PopupWindow](/app/src/main/java/cc/haoduoyu/demoapp/popupwindow) 
 PopupWindow和PopupMenu的使用
 ##### [AutoScrollViewPager](/app/src/main/java/cc/haoduoyu/demoapp/autoscrollviewpager) 
 自动循环ViewPager
 
-#####2016.4.20
+##### 2016.4.20
 
 ##### [Test](/app/src) 
 单元测试和UI测试
@@ -61,17 +61,22 @@ PopupWindow和PopupMenu的使用
 ##### [RxJava&Retrofit](/app/src/main/java/cc/haoduoyu/demoapp/rxjava/retrofit)
 RxJava 与 Retrofit 结合使用
 
-#####2016.6.25
+##### 2016.6.25
 
 ##### [ScrollableLayout](/app/src/main/java/cc/haoduoyu/demoapp/scrollablelayout)
 可添加Header View且Scroll View头部可固定Layout
 ##### [ItemTouchHelper](/app/src/main/java/cc/haoduoyu/demoapp/itemtouchhelper)
 滑动删除，拖动排序RecyclerView
 
-#####2016.7.17
+##### 2016.7.17
 
 ##### [AudioRecorder](/app/src/main/java/cc/haoduoyu/demoapp/audiorecorder)
 按住录音/按住说话
+
+##### 2016.9.14
+
+##### [Dagger2](/app/src/main/java/cc/haoduoyu/demoapp/dagger)
+依赖注入框架 Dagger2 使用
 
 
 
