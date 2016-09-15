@@ -1,6 +1,7 @@
 package cc.haoduoyu.demoapp.dagger.injector.components;
 
 import cc.haoduoyu.demoapp.dagger.injector.ActivityScope;
+import cc.haoduoyu.demoapp.dagger.injector.Test;
 import cc.haoduoyu.demoapp.dagger.injector.modules.ImageModule;
 import cc.haoduoyu.demoapp.dagger.ui.DaggerActivity;
 import dagger.Component;

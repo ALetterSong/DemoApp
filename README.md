@@ -73,10 +73,12 @@ RxJava 与 Retrofit 结合使用
 ##### [AudioRecorder](/app/src/main/java/cc/haoduoyu/demoapp/audiorecorder)
 按住录音/按住说话
 
-##### 2016.9.14
+##### 2016.9.15
 
 ##### [Dagger2](/app/src/main/java/cc/haoduoyu/demoapp/dagger)
 依赖注入框架 Dagger2 使用
+##### [观察者模式](/app/src/main/java/cc/haoduoyu/demoapp/observer/ObserverMain)
+Java 实现观察者模式
 
 
 
