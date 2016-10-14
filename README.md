@@ -80,5 +80,12 @@ RxJava 与 Retrofit 结合使用
 ##### [观察者模式](/app/src/main/java/cc/haoduoyu/demoapp/observer/ObserverMain.java)
 Java 实现观察者模式
 
+##### 2016.10.8
+
+##### [Data-Binding](/app/src/main/java/cc/haoduoyu/demoapp/data-binding)
+~~Data-Binding 的使用~~
+##### [加密算法](/lib/src/main/java/com/example/Test.java)
+一些加密算法
+
 
 
