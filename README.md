@@ -1,14 +1,10 @@
 # DemoApp
 
 ##### 2016.1.27
-##### [DropDownListView](/app/src/main/java/cc/haoduoyu/demoapp/dropdownlistview/) 
-下拉刷新和底部自动加载ListView
 ##### [GRecyclerView](/app/src/main/java/cc/haoduoyu/demoapp/grecyclerview/) 
 RecyclerView的封装
 ##### [Span](/app/src/main/java/cc/haoduoyu/demoapp/span/)
 Span的使用
-##### [Date and Device Utils](/app/src/main/java/cc/haoduoyu/demoapp/device/) 
-日期和设备工具类
 
 ##### 2016.2.1
 
@@ -25,8 +21,6 @@ WebView与JavaScript配合使用
  
 ##### [AsyncTask](/app/src/main/java/cc/haoduoyu/demoapp/asynctask) 
 AsyncTask的使用
-##### [Utils](/app/src/main/java/cc/haoduoyu/demoapp/utils) 
-工具类集合
 ##### [ViewDragHelper](/app/src/main/java/cc/haoduoyu/demoapp/viewdraghelper) 
 ViewDragHelper的使用
 #####  [CustomDialog](/app/src/main/java/cc/haoduoyu/demoapp/dialog) 
@@ -84,8 +78,10 @@ Java 实现观察者模式
 
 ##### [Data-Binding](/app/src/main/java/cc/haoduoyu/demoapp/data-binding)
 ~~Data-Binding 的使用~~
-##### [加密算法](/lib/src/main/java/com/example/Test.java)
-一些加密算法
+##### [加密算法](/lib/src/main/java/cc/haoduoyu/encrypt)
+[DES](/lib/src/main/java/cc/haoduoyu/encrypt/Des.java)/[AES](/lib/src/main/java/cc/haoduoyu/encrypt/Aes.java)/[SHA]((/lib/src/main/java/cc/haoduoyu/encrypt/Sha.java))/[RSA]((/lib/src/main/java/cc/haoduoyu/encrypt/Rsa.java)) 算法
+##### [Lambda表达式](/lib/src/main/java/cc/haoduoyu/Lambda.java)
+Lambda 表达式的使用
 
 
 
